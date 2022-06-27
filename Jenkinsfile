@@ -14,11 +14,7 @@ stages {
         url: 'https://github.com/manojdesen1/multi.git'
       }
     }
-    stage('Maven build'){
-      steps {
-        sh 'mvn clean install'
-      }
-    }
+    
  
  }
 }
