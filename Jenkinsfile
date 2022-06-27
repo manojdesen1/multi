@@ -10,7 +10,7 @@ pipeline {
 stages {
     stage('Git checkout'){
       steps {
-        git branch: '{develop}',
+        git branch: '${develop}',
         url: 'https://github.com/manojdesen1/multi.git'
       }
     }
