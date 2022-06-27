@@ -14,6 +14,11 @@ stages {
         url: 'https://github.com/manojdesen1/multi.git'
       }
     }
+  stage('maven bulid'){
+    steps{
+      sh 'mvn clean install'
+    }
+  }
 }   
  
  
