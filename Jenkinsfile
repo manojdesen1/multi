@@ -19,6 +19,14 @@ stages {
       sh 'mvn clean install'
     }
   }   
- 
+ stage ('Sonarqube Analysis'){
+           steps {
+           withSonarQubeEnv('sonarqube') {
+           sh '''
+           mvn -e -B sonar:sonar -Dsonar.java.source=1.8 -Dsonar.host.url="${sonar_url}" -Dsonar.login="${sonar_username}" -Dsonar.password="${sonar_password}" -Dsonar.sourceEncoding=UTF-8
+           '''
+           }
+         }
+      } 
  }
 }
