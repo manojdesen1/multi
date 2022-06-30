@@ -5,7 +5,13 @@ pipeline {
     jdk 'java8'
     maven 'maven'
   }
-  
+  environment {
+
+      sonar_url = 'http://172.31.18.70:9000'
+      sonar_username = 'admin'
+      sonar_password = 'admin'
+      
+ }
   
 stages {
     stage('Git checkout'){
